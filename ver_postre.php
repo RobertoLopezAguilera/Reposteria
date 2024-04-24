@@ -9,10 +9,8 @@
 </head>
 <body>
 <?php
-// Incluir archivo de conexión a la base de datos
 include('includes/conexion.php');
 
-// Verificar si se ha pasado un id de postre válido en la URL
 if(isset($_GET['id']) && is_numeric($_GET['id'])) {
     // Obtener el id del postre
     $idPostre = $_GET['id'];
@@ -42,24 +40,34 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
             echo "<input type='hidden' name='idPostre' value='" . $row['idPostre'] . "'>";
             echo "<button type='submit'class='btn btn-primary' >Comprar</button>";
             echo "</form>";
-            echo "<button type='button' class='btn btn-secondary'>Agregar al carrito</button>";
+            echo "<button type='button' class='btn btn-secondary' onclick='agregarAlCarrito(" . $row['idPostre'] . ")'>Agregar al carrito</button>";
             echo "</div>";
             echo "</div>";
         }
         echo "</div>";
     } else {
-        // Mostrar mensaje si no se encontró el postre
         echo "No se encontró el postre.";
     }
 } else {
-    // Si no se ha pasado un id de postre válido, redirigir al catálogo
     header("Location: catalogo.php");
     exit;
 }
-
-// Cerrar la conexión a la base de datos
 $conn->close();
 ?>
+
+<script>
+function agregarAlCarrito(idPostre) {
+    // Obtener los IDs de los postres del localStorage
+    var postresEnCarrito = localStorage.getItem('postresEnCarrito');
+    var idsPostres = postresEnCarrito ? JSON.parse(postresEnCarrito) : [];
+
+    idsPostres.push(idPostre);
+    localStorage.setItem('postresEnCarrito', JSON.stringify(idsPostres));
+
+    // Mostrar un mensaje de éxito
+    alert('El postre ha sido agregado al carrito de compras.');
+}
+</script>
 
 </body>
 </html>
