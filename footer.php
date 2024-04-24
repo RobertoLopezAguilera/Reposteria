@@ -6,23 +6,23 @@
         <div class="footer-section">
             <h3>Cliente</h3>
             <ul>
-                <li><a href="#">Preguntas frecuentes</a></li>
-                <li><a href="#">Atención al cliente</a></li>
-                <li><a href="#">Invitado contenido</a></li>
+                <li><a href="Preguntas.php">Preguntas frecuentes</a></li>
+                <li><a href="AtencionClien.php">Atención al cliente</a></li>
+                <li><a href="Invitado.php">Invitado contenido</a></li>
             </ul>
         </div>
         <div class="footer-section">
             <h3>Legales</h3>
             <ul>
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Aviso de privacidad</a></li>
+                <li><a href="TerminyCondicion.php">Términos y condiciones</a></li>
+                <li><a href="AvisodPriva.php">Aviso de privacidad</a></li>
             </ul>
         </div>
         <div class="footer-section">
             <h3>Repostería Piña</h3>
             <ul>
-                <li><a href="#">Bolsa de trabajo</a></li>
-                <li><a href="#">Eventos especiales</a></li>
+                <li><a href="BolsaTraba.php">Bolsa de trabajo</a></li>
+                <li><a href="EventosEsp.php">Eventos especiales</a></li>
             </ul>
         </div>
         <div class="footer-section">
