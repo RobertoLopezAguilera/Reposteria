@@ -40,7 +40,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
             echo "<input type='hidden' name='idPostre' value='" . $row['idPostre'] . "'>";
             echo "<button type='submit'class='btn btn-primary' >Comprar</button>";
             echo "</form>";
-            echo "<button type='button' class='btn btn-secondary' onclick='agregarAlCarrito(" . $row['idPostre'] . ")'>Agregar al carrito</button>";
+            echo "<button type='button' class='btn btn-secondary' onclick='agregarAlCarrito(" . $row['idPostre'] . ", \"" . $row['Nombre'] . "\", " . $row['Precio'] . ", \"" . base64_encode($row['Imagen']) . "\")'>Agregar al carrito</button>";
             echo "</div>";
             echo "</div>";
         }
@@ -56,18 +56,23 @@ $conn->close();
 ?>
 
 <script>
-function agregarAlCarrito(idPostre) {
-    // Obtener los IDs de los postres del localStorage
+    function agregarAlCarrito(idPostre, nombre, precio, imagenBase64) {
+    // Obtener los postres en el carrito del localStorage
     var postresEnCarrito = localStorage.getItem('postresEnCarrito');
-    var idsPostres = postresEnCarrito ? JSON.parse(postresEnCarrito) : [];
+    var postres = postresEnCarrito ? JSON.parse(postresEnCarrito) : [];
 
-    idsPostres.push(idPostre);
-    localStorage.setItem('postresEnCarrito', JSON.stringify(idsPostres));
+    // Agregar el nuevo postre al carrito
+    postres.push({ id: idPostre, nombre: nombre, precio: precio, imagen: imagenBase64 });
+    
+    // Guardar el carrito actualizado en el localStorage
+    localStorage.setItem('postresEnCarrito', JSON.stringify(postres));
 
     // Mostrar un mensaje de éxito
     alert('El postre ha sido agregado al carrito de compras.');
 }
+
 </script>
+
 
 </body>
 </html>
