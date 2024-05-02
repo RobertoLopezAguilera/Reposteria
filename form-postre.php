@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$mensaje = '';
+if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
+    $mensaje = '<p style="color: red;">Debes iniciar sesión primero para acceder a esta página.</p>';
+    echo "alert('Debes de iniciar secion para acceder')";
+}
+?>
 <?php include('header.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -81,7 +95,7 @@
             <h2>Registrar Nuevo Postre</h2>
             <form class="registro-form" action="registro-postre.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="text" id="nombre" name="nombre" required placeholder="Nombre del postre" class="input-text">
+                    <input type="text" id="nombre" name="nombre" required placeholder="Nombre del postre" class="input-text" minlength="10" required pattern="[A-Za-z]*">
                 </div>
                 <div class="form-group">
                     <select id="categoria" name="categoria" required class="input-text" onchange="actualizarTamaño()">
@@ -98,13 +112,13 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="sabor" name="sabor" required placeholder="Sabor" class="input-text">
+                    <input type="text" id="sabor" name="sabor" required placeholder="Sabor" class="input-text" pattern="[A-Za-z]*">
                 </div>
                 <div class="form-group">
-                    <input type="text" id="ingredientes" name="ingredientes" required placeholder="Ingredientes" class="input-text">
+                    <input type="text" id="ingredientes" name="ingredientes" required placeholder="Ingredientes" class="input-text" pattern="[A-Za-z]*">
                 </div>
                 <div class="form-group">
-                    <input type="number" id="precio" name="precio" required placeholder="Precio" class="input-text">
+                    <input type="number" id="precio" name="precio" required placeholder="Precio" class="input-text" pattern="[0-9]*">
                 </div>
                 <div class="form-group">
                     <input type="file" id="imagen" name="imagen" accept="image/*" required>

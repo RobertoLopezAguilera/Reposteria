@@ -76,6 +76,10 @@
     </style>
 </head>
 <body>
+    <h2>Realiza tu pedido en nuestra sucursal
+    <a href="https://www.google.com/maps/search/?api=1&query=Respostería+Piña">Sucursal en tu zona</a>
+    </h2>
+    
     <div class="div-Login">
         <div class="login-container">
         <div class="postre-info">
@@ -105,19 +109,23 @@
             </div>
         </div>
         <div class="login-container">
-            <h2>Datos del cliente:</h2>
+            <h2>Pedir a domicilio</h2>
             <form action="procesar-orden.php" method="POST" onsubmit="return validarFecha()">
                 <input type="hidden" name="idPostre" value="<?php echo isset($_POST['idPostre']) ? $_POST['idPostre'] : ''; ?>">
                 <div class="form-group">
-                    <input type="text" placeholder="   Nombre Completo" id="nombre" name="nombre" class="input-text" required>
+                    <input type="text" placeholder="   Nombre Completo" id="nombre" name="nombre" class="input-text" minlength="10" required pattern="[A-Za-z]*">
                 </div>
+
                 <div class="form-group">
-                    <input type="text" placeholder="   Ejemplo@gmail.com" id="correo" name="correo" class="input-text" required>
+                    <input  type="text" placeholder="   Ejemplo@gmail.com" id="correo" name="correo" class="input-text" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="telefono">Teléfono del Cliente:</label>
-                    <input type="tel" placeholder="   10 Digitos" id="telefono" name="telefono" class="input-text" required minlength="10" maxlength="10">
+                    <input type="tel" placeholder="   10 Digitos" id="telefono" name="telefono" class="input-text" required minlength="10" maxlength="10"
+                    pattern="[0-9]*">
                 </div>
+                
                 <div class="form-group">
                     <label for="fecha_entrega">Fecha de Entrega:</label>
                     <input type="date"  id="fecha_entrega" name="fecha_entrega" class="input-text" required>
@@ -127,16 +135,41 @@
                     <input type="text" placeholder="  Nombre completo de la calle" id="calle" name="calle" class="input-text" required minlength="10">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="  Numero exterior #" placeholder="10 Digitos" id="numero" name="numero" class="input-text" required>
+                    <input type="text" placeholder="  Numero exterior #" placeholder="10 Digitos" id="numero" name="numero" class="input-text" required pattern="[0-9]*">
                 </div>
                 
                 <div class="form-group">
                     <label for="numero_tarjeta">Datos de Tarjeta:</label>
-                    <input type="text" placeholder="#### #### #### ####" id="numero_tarjeta" name="numero_tarjeta" class="input-text" minlength="16" maxlength="16">
+                    <input type="text" placeholder="#### #### #### ####" id="numero_tarjeta" name="numero_tarjeta" class="input-text" minlength="16" maxlength="16" pattern="[0-9]*">
                 </div>
                 <div class="form-groupTarjeta">
                     <div>
-                        <input type="text" placeholder="CVV" id="cv" name="cv" class="input-textTarjeta" required minlength="3" maxlength="4">
+                        <input type="text" placeholder="CVV" id="cv" name="cv" class="input-textTarjeta" required minlength="3" maxlength="4" pattern="[0-9]">
+                        <input placeholder=" 00/00" type="text" id="fecha_vencimiento" name="fecha_vencimiento" class="input-textTarjeta" required minlength="5" maxlength="5">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Orden</button>
+            </form>
+        </div>
+        <div class="login-container">
+            <h2>Retirar en sucursal</h2>
+            <form action="procesar-orden-sucursal.php" method="POST" onsubmit="return validarFecha()">
+                <input type="hidden" name="idPostre" value="<?php echo isset($_POST['idPostre']) ? $_POST['idPostre'] : ''; ?>">
+                
+                <div class="form-group">
+                    <input type="text" placeholder="   Nombre Completo" id="nombre" name="nombre" class="input-text" required pattern="[A-Za-z]*" minlength="10">
+                </div>
+                <div class="form-group">
+                    <label for="fecha_entrega">Fecha de Entrega:</label>
+                    <input type="date"  id="fecha_entrega" name="fecha_entrega" class="input-text" required>
+                </div>
+                <div class="form-group">
+                    <label for="numero_tarjeta">Datos de Tarjeta:</label>
+                    <input type="text" placeholder="#### #### #### ####" id="numero_tarjeta" name="numero_tarjeta" class="input-text" minlength="16" maxlength="16" pattern="[0-9]*">
+                </div>
+                <div class="form-groupTarjeta">
+                    <div>
+                        <input type="text" placeholder="CVV" id="cv" name="cv" class="input-textTarjeta" required minlength="3" maxlength="4" pattern="[0-9]*">
                         <input placeholder=" 00/00" type="text" id="fecha_vencimiento" name="fecha_vencimiento" class="input-textTarjeta" required minlength="5" maxlength="5">
                     </div>
                 </div>

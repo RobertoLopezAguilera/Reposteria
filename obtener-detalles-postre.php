@@ -24,6 +24,7 @@
             display : flex;
         }
     </style>
+    <script src="js.js"></script>
 </head>
 <body>
 <?php
@@ -46,22 +47,18 @@ if(isset($_GET['id'])) {
             echo "<p><strong>Tamaño:</strong> " . $row['Tamaño'] . "</p>";
             echo "<p><strong>Precio:</strong> $" . $row['Precio'] . "</p>";
             echo "<p><strong>Sabor:</strong> " . $row['Sabor'] . "</p>";
+            echo "<button class='btn btn-outline-danger' onclick='quitarDelCarrito(" . $row['idPostre'] . ")'>Quitar</button>";
             echo "</div>";
             echo "</div>";
         }
         echo "</div>";
     } else {
-        // Si no se encontró el postre, mostrar un mensaje de error
         echo "<p>No se encontró el postre con el ID proporcionado.</p>";
     }
 } else {
-    // Si el id del postre no es válido, mostrar un mensaje de error
     echo "<p>ID de postre no válido.</p>";
 }
-
-// Cerrar la conexión a la base de datos
 $conn->close();
 ?>
-
 </body>
 </html>

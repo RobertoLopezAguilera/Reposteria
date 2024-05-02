@@ -69,8 +69,8 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
             echo "<h2>Detalles de la Orden</h2>";
             echo "<form action='actualizar-estado.php' method='post'>";
             echo "<input type='hidden' name='idOrden' value='$idOrden'>";
-            echo "<p>Nombre del Cliente: $nombreCliente</p>";
-            echo "<p>Teléfono del Cliente: $telefonoCliente</p>";
+            echo "<p>Cliente: $nombreCliente</p>";
+            echo "<p>Teléfon: $telefonoCliente</p>";
             echo "<p>Fecha de Entrega: $fechaEntrega</p>";
             echo "<p>Fecha en que se pidio: $fechaPedido</p>";
             echo "<p>Estado actual: $estado</p>";
@@ -135,6 +135,23 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
                 }
             } else {
                 echo "No se encontraron detalles del postre para esta orden.";
+            }
+            // Obtener los detalles de la entrega domicialio
+            $sql_domilicio = "SELECT * FROM `domicilio`;";
+            $result_domicilio = $conn->query($sql_domilicio);
+
+            if ($result_domicilio->num_rows > 0) {
+                $row_domicilio = $result_domicilio->fetch_assoc();
+                $calle = $row_domicilio['Calle'];
+                $numero = $row_domicilio['Numero'];
+                echo"<div class='login-container'>";
+                echo "<h2>Tipo de entrega</h2>";
+                echo "<p>Domicilio: $calle</p>";
+                echo "<p>numero: $numero</p>";
+                echo "</div>";
+                echo "</div>";
+            } else {
+                echo "No se encontró el postre asociado a esta orden.";
             }
         } else {
             echo "No se encontró la orden con el ID proporcionado.";

@@ -8,9 +8,7 @@
         <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
-        <div>
-
-        </div>
+    <?php include('mas-vendido.php'); ?>
     </body>
 </html>
 <?php include('footer.php'); ?>

@@ -74,18 +74,13 @@
 <section class="conter price">
 <article class="contain">
     <h2 class="tittle"> Nuestro catalogo
- <a href="#" class="btn">Visitar</a>
+ <a href="catalogo.php" class="btn">Visitar</a>
     </h2>
 </article>
 <section class="contactos">
     <h2 class="tittle">contactos</h2>
     <p>Reposteria piña</p>
-    <figure> <img src="https://cdn.icon-icons.com/icons2/840/PNG/512/Whatsapp_icon-icons.com_66931.png" alt="">
-    <img src="https://i.pinimg.com/originals/95/d1/63/95d16377f0820c48b9ad3e679d4aa3fe.png" alt="">
-    <img src="https://static.vecteezy.com/system/resources/thumbnails/012/068/415/small_2x/concept-of-social-networks-instagram-icon-3d-render-free-png.png" alt="">
-</section>
-
-</section>
+    
 
 </body>
 
