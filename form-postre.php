@@ -20,6 +20,9 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Nuevo Postre</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
     <style>
             .div-Login{
                 display: flex;
@@ -95,7 +98,9 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
             <h2>Registrar Nuevo Postre</h2>
             <form class="registro-form" action="registro-postre.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="text" id="nombre" name="nombre" required placeholder="Nombre del postre" class="input-text" minlength="10" required pattern="[A-Za-z]*">
+                    <input type="text" id="nombre" name="nombre" required placeholder="   Nombre del postre" 
+                    class="input-text" 
+                    minlength="6" maxlength="35">
                 </div>
                 <div class="form-group">
                     <select id="categoria" name="categoria" required class="input-text" onchange="actualizarTamaño()">
@@ -112,16 +117,20 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="sabor" name="sabor" required placeholder="Sabor" class="input-text" pattern="[A-Za-z]*">
+                    <input type="text" id="sabor" name="sabor" required placeholder="   Sabor" class="input-text" 
+                    minlength="5">
                 </div>
                 <div class="form-group">
-                    <input type="text" id="ingredientes" name="ingredientes" required placeholder="Ingredientes" class="input-text" pattern="[A-Za-z]*">
+                    <input type="text" id="ingredientes" name="ingredientes" required placeholder="   Ingredientes" 
+                    class="input-text" 
+                    pattern="[A-Za-z]"  minlength="5">
                 </div>
                 <div class="form-group">
-                    <input type="number" id="precio" name="precio" required placeholder="Precio" class="input-text" pattern="[0-9]*">
+                    <input type="number" id="precio" name="precio" required placeholder="   Precio" class="input-text" 
+                    pattern="[0-9]*"minlength="2">
                 </div>
                 <div class="form-group">
-                    <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                    <input type="file" id="imagen" name="imagen" accept="image/*"class="form-control" required>
                 </div>
                 <div class="form-group">
                     <select id="estado" name="estado" required class="input-text">

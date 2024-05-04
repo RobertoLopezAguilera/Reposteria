@@ -12,13 +12,13 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         grid-gap: 20px;
         padding: 20px;
-    }
+        }
     </style>
 </head>
 <body>
 <h1>Catálogo de Postres</h1>
 <?php
-$sql = "SELECT * FROM Postre WHERE 1=1";
+$sql = "SELECT * FROM Postre WHERE Estado = 'Disponible'";
 
 if(isset($_GET['buscar'])) {
     $buscar = $_GET['buscar'];
