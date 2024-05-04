@@ -35,13 +35,12 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
             .login-container {
                 background-color: rgba(255, 255, 255, 0.315);
                 max-width: 300px;
-                height: 545px;
+                height: auto;
                 margin: 1rem;
                 padding: 30px;
                 border-radius: 10px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
                 text-align: center;
-                margin-top: 50px;
             }
 
             .input-text{
@@ -140,7 +139,7 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
                     </select>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-secondary">Registrar Postre</button>
+                    <button type="submit" class="btn btn-primary">Registrar Postre</button>
                 </div>
             </form>
         </div>

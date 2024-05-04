@@ -40,7 +40,7 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
                 $postre = $result->fetch_assoc();
     ?>
     <div class = "div-Login">
-        <div class = "login-container">
+        <div class = "login-containerPostre">
         <h1>Editar Postre</h1>
         <form action="procesar-edicion-postre.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="idPostre" value="<?php echo $postre['idPostre']; ?>">
