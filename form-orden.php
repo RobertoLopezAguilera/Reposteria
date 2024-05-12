@@ -117,7 +117,9 @@
                 </div>
 
                 <div class="form-group">
-                    <input  type="text" placeholder="   Ejemplo@gmail.com" id="correo" name="correo" class="input-text" required>
+                    <input  type="text" placeholder="   Ejemplo@gmail.com" id="correo" name="correo" class="input-text" 
+                    pattern="[A-Za-z]+@[A-Za-z]+\.[A-Za-z]*\.[A-Za-z]{2,}" required>
+                    
                 </div>
                 
                 <div class="form-group">
