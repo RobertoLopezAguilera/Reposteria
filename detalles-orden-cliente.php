@@ -105,6 +105,9 @@ if (isset($_GET['idOrden']) && is_numeric($_GET['idOrden'])) {
 
 $conn->close();
 ?>
+<script>
+        alert('Su compra fue registrada exitosamente');
+    </script>
 </body>
 </html>
 <?php include('footer.php') ?>

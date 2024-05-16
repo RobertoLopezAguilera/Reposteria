@@ -118,7 +118,7 @@
 
                 <div class="form-group">
                     <input  type="text" placeholder="   Ejemplo@gmail.com" id="correo" name="correo" class="input-text" 
-                    pattern="[A-Za-z]+@[A-Za-z]+\.[A-Za-z]*\.[A-Za-z]{2,}" required>
+                    pattern="[A-Za-z]*+@[A-Za-z]*+\.[A-Za-z]*\.[A-Za-z]{2,}" required>
                     
                 </div>
                 
@@ -146,7 +146,7 @@
                 </div>
                 <div class="form-groupTarjeta">
                     <div>
-                        <input type="text" placeholder="CVV" id="cv" name="cv" class="input-textTarjeta" required minlength="3" maxlength="4" pattern="[0-9]">
+                        <input type="text" placeholder="CVV" id="cv" name="cv" class="input-textTarjeta" required minlength="3" maxlength="4" pattern="[0-9]*">
                         <input placeholder=" 00/00" type="text" id="fecha_vencimiento" name="fecha_vencimiento" class="input-textTarjeta" required minlength="5" maxlength="5">
                     </div>
                 </div>

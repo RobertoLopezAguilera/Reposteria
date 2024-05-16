@@ -95,7 +95,7 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
     <div class="div-Login">
         <div class="login-container">
             <h2>Registrar Nuevo Postre</h2>
-            <form class="registro-form" action="registro-postre.php" method="POST" enctype="multipart/form-data">
+            <form class="registro-form" action="registro-postre.php" method="POST" enctype="multipart/form-data" onsubmit="return validarNegativos()">
                 <div class="form-group">
                     <input type="text" id="nombre" name="nombre" required placeholder="   Nombre del postre" 
                     class="input-text" 
@@ -117,12 +117,11 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
                 </div>
                 <div class="form-group">
                     <input type="text" id="sabor" name="sabor" required placeholder="   Sabor" class="input-text" 
-                    minlength="5">
+                    minlength = "5" pattern = "[A-Za-z]*" maxlength = "45">
                 </div>
                 <div class="form-group">
                     <input type="text" id="ingredientes" name="ingredientes" required placeholder="   Ingredientes" 
-                    class="input-text" 
-                    pattern="[A-Za-z]"  minlength="5">
+                    class="input-text" pattern="[A-Za-z]*"  minlength="5" maxlength = "45">
                 </div>
                 <div class="form-group">
                     <input type="number" id="precio" name="precio" required placeholder="   Precio" class="input-text" 
@@ -146,4 +145,7 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
     </div>
 </body>
 </html>
+<script>
+    
+</script>
 <?php include('footer.php');?>

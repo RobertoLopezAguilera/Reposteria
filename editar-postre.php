@@ -42,7 +42,7 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
     <div class = "div-Login">
         <div class = "login-containerPostre">
         <h1>Editar Postre</h1>
-        <form action="procesar-edicion-postre.php" method="POST" enctype="multipart/form-data">
+        <form action="procesar-edicion-postre.php" method="POST" enctype="multipart/form-data" onsubmit="return validarNegativos()">
             <input type="hidden" name="idPostre" value="<?php echo $postre['idPostre']; ?>">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre del Postre</label>
@@ -84,7 +84,8 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
             </div>
             <div class="mb-3">
                 <label for="precio" class="form-label">Precio</label>
-                <input type="number" class="form-control" id="precio" name="precio" value="<?php echo $postre['Precio']; ?>" required>
+                <input type="number" class="form-control" id="precio" name="precio" value="<?php echo $postre['Precio']; ?>" required
+                pattern="[0-9]*" minlength="2">
             </div>
             <div class="mb-3">
                 <label for="estado" class="form-label">Estado</label>
@@ -128,6 +129,18 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
             var elemento = document.createElement("option");
             elemento.textContent = opcion;
             tamañoSelect.appendChild(elemento);
+        }
+    }
+    function validarNegativos(){
+        var precio = document.getElementById("precio").value;
+        if(precio<0){
+            alert("No se puede precio negativo negativos");
+            return false;
+        }else if(precio<50){
+            alert("El postre no debe ser tan barato");
+            return false;
+        }else if(precio>20000){
+            alert("El postre es muy caro");
         }
     }
 </script>

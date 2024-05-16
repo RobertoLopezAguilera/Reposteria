@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Ejecutar la consulta
         if ($stmt->execute()) {
             // Redireccionar a la página de catálogo con un mensaje de éxito
-            header("Location: catalogo.php?mensaje=edicion_exitosa");
+            header("Location: catalago-postres.php?mensaje=edicion_exitosa");
             exit();
         } else {
             // Si la consulta falla, mostrar un mensaje de error

@@ -70,7 +70,7 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
             echo "<form action='actualizar-estado.php' method='post'>";
             echo "<input type='hidden' name='idOrden' value='$idOrden'>";
             echo "<p>Cliente: $nombreCliente</p>";
-            echo "<p>Teléfon: $telefonoCliente</p>";
+            echo "<p>Teléfono: $telefonoCliente</p>";
             echo "<p>Fecha de Entrega: $fechaEntrega</p>";
             echo "<p>Fecha en que se pidio: $fechaPedido</p>";
             echo "<p>Estado actual: $estado</p>";
