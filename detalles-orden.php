@@ -137,7 +137,7 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] === 'inicio_sesion') {
                 echo "No se encontraron detalles del postre para esta orden.";
             }
             // Obtener los detalles de la entrega domicialio
-            $sql_domilicio = "SELECT * FROM `domicilio`;";
+            $sql_domilicio = "SELECT * FROM `Domicilio`;";
             $result_domicilio = $conn->query($sql_domilicio);
 
             if ($result_domicilio->num_rows > 0) {

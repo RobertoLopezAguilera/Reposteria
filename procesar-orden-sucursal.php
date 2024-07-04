@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha_vencimiento = $_POST['fecha_vencimiento'];
 
     $conn->begin_transaction();
-    $sql_domicilio = "SELECT * FROM `domicilio` WHERE idEntrega = 1;";
+    $sql_domicilio = "SELECT * FROM `Domicilio` WHERE idEntrega = 1;";
     if ($conn->query($sql_domicilio)) {
         $fecha_pedido = date("Y-m-d");
         $estado = "Pendiente";

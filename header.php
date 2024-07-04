@@ -67,7 +67,7 @@
                         <li><a href="https://www.google.com/maps/search/?api=1&query=Respostería+Piña" target="_blank">Sucursales</a></li>
                         <li><a href="Promociones.php">Promociones</a></li>
                         <li class="dropdown">
-                        <a class="nav-link" href="login.php">
+                        <a class="nav-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                                     <path d="M8 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm3-3a4 4 0 1 0-6.828 2.829A6 6 0 0 0 1 14h14a6 6 0 0 0-3.172-6.172A4 4 0 0 0 11 5z"/>
                                 </svg>
