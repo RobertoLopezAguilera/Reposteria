@@ -1,22 +1,35 @@
-/* Pie de pagina*/
+/* Pie de pagina */
 footer {
     background-color: #f9d15f;
-    color: #f9d15f;
-    padding: 30px 0;
+    color: #333;
+    padding: 20px 0;
+    text-align: center; /* Alineación central */
 }
 
 .container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap; /* Permite que los elementos se adapten en múltiples filas */
     background-color: #f9d15f;
+    padding: 20px;
 }
+
 .container-img {
     display: flex;
-    justify-content: space-around;
-    background-image: linear-gradient(to left,rgb(169, 240, 245),rgb(255, 172, 248),#e3f1ff);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que las imágenes se adapten a múltiples filas */
+    background-image: linear-gradient(to left, rgb(169, 240, 245), rgb(255, 172, 248), #e3f1ff);
 }
+
+.footer-section {
+    margin: 10px;
+    text-align: left; /* Texto alineado a la izquierda */
+    flex: 1; /* Permite que las secciones se expandan */
+}
+
 .footer-section h3 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
     color: black;
 }
@@ -24,7 +37,6 @@ footer {
 .footer-section ul {
     list-style: none;
     padding: 0;
-    background-color: #f9d15f;
 }
 
 .footer-section ul li {
@@ -34,16 +46,20 @@ footer {
 .footer-section ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 14px; /* Tamaño de letra adaptado */
 }
 
 .footer-section ul li a:hover {
     text-decoration: underline;
 }
+
 .redes-sociales {
     list-style-type: none;
     padding: 0;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permite que las redes sociales se adapten a múltiples filas */
 }
 
 .redes-sociales li {
@@ -57,4 +73,52 @@ footer {
 .redes-sociales img {
     width: 30px;
     height: auto;
+}
+
+/* Media Queries para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Cambia a una sola columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .footer-section {
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+        margin: 20px 0; /* Espaciado superior e inferior */
+    }
+
+    .footer-section ul li a {
+        font-size: 16px; /* Aumenta el tamaño de la fuente para móviles */
+    }
+
+    .redes-sociales {
+        justify-content: space-around; /* Espacio equitativo en redes sociales */
+    }
+
+    .redes-sociales img {
+        width: 40px; /* Aumenta el tamaño de las imágenes en móviles */
+    }
+}
+
+/* Media Queries para pantallas muy pequeñas (por debajo de 480px) */
+@media (max-width: 480px) {
+    footer {
+        padding: 15px 0;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .footer-section ul li a {
+        font-size: 14px; /* Disminuye el tamaño de la fuente en pantallas muy pequeñas */
+    }
+
+    .redes-sociales img {
+        width: 35px;
+    }
+
+    .footer-section h3 {
+        font-size: 14px;
+    }
 }

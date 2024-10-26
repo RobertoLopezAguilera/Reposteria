@@ -8,71 +8,122 @@
     <link rel="stylesheet" href="css/estilo.css">
     <style>
         .div-Login {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: baseline;
-            align-content: flex-start;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: flex-start;
+    margin: 1rem 0;
+}
 
-        .input-text {
-            box-shadow: inset #e571c7 0 0 0 2px;
-            border: 0;
-            background: rgba(255, 255, 255);
-            appearance: none;
-            width: 100%;
-            position: relative;
-            border-radius: 0px;
-            padding: 0px 0px;
-            line-height: 1.4;
-            color: rgb(0, 0, 0);
-            font-size: 16px;
-            font-weight: 400;
-            height: 40px;
-            transition: all .2s ease;
-            border-radius: 10px;
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .div-Login {
+        flex-direction: column; /* Cambia la dirección a columna para pantallas pequeñas */
+        align-items: center;
+    }
+}
 
-            :hover {
-                box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
-            }
+.input-text {
+    box-shadow: inset #e571c7 0 0 0 2px;
+    border: 0;
+    background: rgba(255, 255, 255);
+    appearance: none;
+    width: 100%; /* Ocupará todo el ancho disponible */
+    max-width: 300px; /* Máximo ancho para mantener consistencia */
+    position: relative;
+    border-radius: 0px;
+    padding: 0px 10px;
+    line-height: 1.4;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
+    height: 40px;
+    transition: all .2s ease;
+    border-radius: 10px;
+}
 
-            :focus {
-                background: #fff;
-                outline: 0;
-                box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
-            }
-        }
+/* Estilos de enfoque y hover para mejorar usabilidad */
+.input-text:hover {
+    box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+}
 
-        .postre-info {
-            text-align: center;
-        }
-        .postre-info img {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
-        .postre-info h3 {
-            margin-top: 0;
-        }
-        .input-textTarjeta{
-            box-shadow: inset #e571c7 0 0 0 2px;
-            border: 0;
-            background: rgba(255, 255, 255);
-            appearance: none;
-            width: 5rem;
-            position: relative;
-            border-radius: 0px;
-            padding: 0px 0px;
-            line-height: 1.4;
-            color: rgb(0, 0, 0);
-            font-size: 16px;
-            font-weight: 400;
-            height: 40px;
-            transition: all .2s ease;
-            border-radius: 10px;
-        }
-        .form-groupTarjeta{
-            display: flex;
-        }
+.input-text:focus {
+    background: #fff;
+    outline: 0;
+    box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
+}
+
+/* Información del postre */
+.postre-info {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.postre-info img {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.postre-info h3 {
+    margin-top: 0;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .postre-info img {
+        max-width: 150px; /* Reducir tamaño en pantallas pequeñas */
+    }
+}
+
+/* Estilo para el input pequeño */
+.input-textTarjeta {
+    box-shadow: inset #e571c7 0 0 0 2px;
+    border: 0;
+    background: rgba(255, 255, 255);
+    appearance: none;
+    width: 5rem; /* Ancho específico para este campo */
+    max-width: 80%; /* Mantener responsividad */
+    position: relative;
+    border-radius: 0px;
+    padding: 0px 10px;
+    line-height: 1.4;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
+    height: 40px;
+    transition: all .2s ease;
+    border-radius: 10px;
+}
+
+/* Agrupación de formulario */
+.form-groupTarjeta {
+    display: flex;
+    flex-wrap: wrap; /* Permitir ajuste de elementos */
+    gap: 10px; /* Espacio entre elementos */
+    justify-content: space-around; /* Distribuir de manera uniforme */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .form-groupTarjeta {
+        flex-direction: column; /* Columna en lugar de fila en pantallas pequeñas */
+        align-items: center;
+    }
+}
+
+/* Ajustes generales para pequeños dispositivos */
+@media (max-width: 480px) {
+    .input-text {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .input-textTarjeta {
+        width: 100%; /* Ajustar también en pantallas pequeñas */
+        max-width: 200px; /* Controlar el tamaño máximo */
+    }
+}
+
     </style>
 </head>
 <body>

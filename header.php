@@ -11,6 +11,192 @@
             align-items: center;
             margin-left: 3rem;
         }
+        /* Header */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f9d15f;
+}
+
+header div {
+    flex: 1;
+}
+
+header .div-carrito {
+    margin-left: 1rem;
+}
+
+/* Logo */
+.img-Logo {
+    height: 100px;
+    margin-right: 2rem;
+}
+
+/* Formulario de Búsqueda */
+form {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.input-buscador {
+    width: 60%;
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.boton-buscar {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.boton-buscar:hover {
+    background-color: #2980b9;
+}
+
+/* Menu de Navegación */
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap; /* Adaptación para pantallas pequeñas */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    form {
+        flex: none;
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .input-buscador {
+        width: 70%; /* Ajuste para pantallas medianas */
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .div-carrito {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .img-Logo {
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambia el menú a columna */
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .dropdown-content {
+        left: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-buscador {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin-bottom: 10px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .boton-buscar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    nav ul {
+        display: block; /* Menú en bloque */
+    }
+
+    .img-Logo {
+        height: 50px;
+        margin: 0;
+    }
+
+    header {
+        padding: 10px;
+    }
+}
+
     </style>
 </head>
 <body>    
