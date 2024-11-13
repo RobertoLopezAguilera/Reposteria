@@ -10,19 +10,13 @@
 <body>
 <?php
 include('includes/conexion.php');
-
 if(isset($_GET['id']) && is_numeric($_GET['id'])) {
-    // Obtener el id del postre
     $idPostre = $_GET['id'];
-
-    // Consultar la base de datos para obtener los detalles del postre con el id proporcionado
     $sql = "SELECT * FROM Postre WHERE idPostre = $idPostre";
     $result = $conn->query($sql);
 
-    // Verificar si se encontraron resultados
     if ($result->num_rows > 0) {
-        // Mostrar los detalles del postre
-        echo "<div class='container-img'>";
+        echo "<div class='login-container'>";
         while($row = $result->fetch_assoc()) {
             echo "<div class='row'>";
             echo "<div class='col-md-6'>";
@@ -31,16 +25,15 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
             echo "<div class='col-md-6'>";
             echo "<h1>" . $row['Nombre'] . "</h1>";
             echo "<p><strong>Tamaño:</strong> " . $row['Tamaño'] . "</p>";
-            echo "<p><strong>Precio:</strong> $" . $row['Precio'] . "</p>";
+            echo "<p><strong>Precio:</strong> <span class='precio'>$" . $row['Precio'] . "</span></p>";
             echo "<p><strong>Sabor:</strong> " . $row['Sabor'] . "</p>";
             echo "<p><strong>Ingredientes:</strong> " . $row['Ingredientes'] . "</p>";
             echo "<p><strong>Disponibilidad:</strong> " . ($row['Estado'] == 'Disponible' ? 'Disponible' : 'Agotado') . "</p>";
-            // Agregar formulario para redirigir al formulario de orden con el ID del postre
             echo "<form action='form-orden.php' method='POST'>";
             echo "<input type='hidden' name='idPostre' value='" . $row['idPostre'] . "'>";
-            echo "<button type='submit'class='btn btn-primary' >Comprar</button>";
+            echo "<button type='submit' class='btn btn-primary'>Comprar</button>";
             echo "</form>";
-            echo "<button type='button' class='btn btn-secondary' onclick='agregarAlCarrito(" . $row['idPostre'] . ", \"" . $row['Nombre'] . "\", " . $row['Precio'] . ", \"" . base64_encode($row['Imagen']) . "\")'>Agregar al carrito</button>";
+            echo "<button type='button' class='btn btn-secondary' onclick='agregarAlCarrito(" . $row['idPostre'] . ", " . $row['Precio'] . ")'>Agregar al carrito</button>";
             echo "</div>";
             echo "</div>";
         }
@@ -56,24 +49,24 @@ $conn->close();
 ?>
 
 <script>
-    function agregarAlCarrito(idPostre, nombre, precio, imagenBase64) {
-    // Obtener los postres en el carrito del localStorage
-    var postresEnCarrito = localStorage.getItem('postresEnCarrito');
-    var postres = postresEnCarrito ? JSON.parse(postresEnCarrito) : [];
+    function agregarAlCarrito(idPostre, precio) {
+        // Obtener los IDs de los postres en el carrito del localStorage
+        var postresEnCarrito = JSON.parse(localStorage.getItem('postresEnCarrito')) || [];
+        var preciosEnCarrito = JSON.parse(localStorage.getItem('preciosEnCarrito')) || [];
 
-    // Agregar el nuevo postre al carrito
-    postres.push({ id: idPostre, nombre: nombre, precio: precio, imagen: imagenBase64 });
-    
-    // Guardar el carrito actualizado en el localStorage
-    localStorage.setItem('postresEnCarrito', JSON.stringify(postres));
+        // Agregar el nuevo ID de postre y su precio al carrito
+        postresEnCarrito.push(idPostre);
+        preciosEnCarrito.push(precio);
 
-    // Mostrar un mensaje de éxito
-    alert('El postre ha sido agregado al carrito de compras.');
-}
+        // Guardar los arreglos actualizados en el localStorage
+        localStorage.setItem('postresEnCarrito', JSON.stringify(postresEnCarrito));
+        localStorage.setItem('preciosEnCarrito', JSON.stringify(preciosEnCarrito));
 
+        // Mostrar un mensaje de éxito
+        alert('El postre ha sido agregado al carrito de compras.');
+    }
 </script>
-
 
 </body>
 </html>
-<?php include('footer.php');?>
+<?php include('footer.php'); ?>

@@ -70,7 +70,7 @@ session_start();
                     <input type="checkbox"><label for="">Mantener sesíon iniciada</label>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="login-button">Iniciar Sesión</button>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                 </div>
             </form>
             <p><a class="register-link" href="registro.php">Registrar</a></p>

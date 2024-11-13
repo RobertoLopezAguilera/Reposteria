@@ -135,14 +135,14 @@ header {
     margin: 0 auto;
 }
 
-/* Estilos de la Barra de Búsqueda */
 .input-buscador {
     padding: 10px;
+    margin-right: 2rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Adaptado para pantallas pequeñas */
+    width: 250px; 
 }
 
 .boton-buscar {
@@ -203,13 +203,21 @@ header {
 /* Adaptación del Contenedor de Login */
 .login-container {
     background-color: rgba(255, 255, 255, 0.315);
-    max-width: 90%;
+    max-width: 40%;
     height: auto;
     margin: 1rem auto;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: center;
+}
+
+/* Asegura que la imagen se ajuste al contenedor */
+.img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Opcional: agrega bordes redondeados para mejorar el estilo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera para destacar */
 }
 
 /* Media Queries para diferentes dispositivos */
@@ -273,4 +281,31 @@ header {
 
 form{
     display: block;
+}
+
+.input-text{
+    box-shadow: inset #e571c7 0 0 0 2px;
+        border: 0;
+        background: rgba(255, 255, 255);
+        appearance: none;
+        width: 100%;
+        position: relative;
+        border-radius: 0px;
+        padding: 0px 0px;
+        line-height: 1.4;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        font-weight: 400;
+        height: 40px;
+        transition: all .2s ease;
+        border-radius: 10px;
+        :hover{
+            box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+        }
+        :focus{
+            background: #fff;
+            outline: 0;
+            box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
+        }
+    
 }

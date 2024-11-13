@@ -1,32 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .div-Login{
-            display: flex;        
-        }
-
-        .login-container {
-            background-color: rgba(255, 255, 255, 0.315);
-            max-width: auto;
-            height: auto;
-            margin: 1rem;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            margin-top: 40px;
-        }
-        .carrito{
-            display : flex;
-        }
-    </style>
-    <script src="js.js"></script>
-</head>
-<body>
 <?php
 include('includes/conexion.php');
 
