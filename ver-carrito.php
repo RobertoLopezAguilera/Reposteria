@@ -12,44 +12,55 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         .div-Login {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: baseline;
-            flex-direction: column;
-        }
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        .login-container,
-        .postre-info {
-            background-color: rgba(255, 255, 255, 0.315);
-            max-width: 300px;
-            margin: 1rem;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
+.login-container, .postre-info {
+    background-color: rgba(255, 255, 255, 0.315);
+    max-width: 300px;
+    margin: 1rem;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
 
-        .postre-info img {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
+.postre-info img {
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo del contenedor */
+    height: 150px; /* Fija una altura uniforme */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
 
-        .input-text {
-            width: 100%;
-            height: 40px;
-            border-radius: 10px;
-            border: 0;
-            box-shadow: inset #e571c7 0 0 0 2px;
-            transition: all .2s ease;
-        }
+.input-text {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    margin: 0.3rem;
+    box-shadow: inset #e571c7 0 0 0 2px;
+    transition: all .2s ease;
+}
+
+h2#carrito, h2#total {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.5em;
+    color: #333;
+}
+
     </style>
 </head>
 
 <body>
     <h2 id="carrito">Carrito de Compras</h2>
     <div class="div-Login">
-    <div id="listaPostres"></div>
+    <div id="listaPostres">
+
+    </div>
     <div class="login-container">
         <h2>Datos del cliente:</h2>
         <form action="procesar-orden-varios.php" method="POST" onsubmit="return validarFormulario()">

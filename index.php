@@ -9,7 +9,6 @@
 </head>
 <body>
     <img src="img/Slogan.jpeg" class="img-Slogan">
-    <h1>Lo mas vendido</h1>
     <?php include('mas-vendido.php'); ?>
 </body>
 </html>

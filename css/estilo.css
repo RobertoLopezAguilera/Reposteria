@@ -21,29 +21,64 @@ h1, h2, h3 {
 
 .postre {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 20px;
     text-align: center;
     transition: box-shadow 0.3s;
+    background-color: #f9f9f9; /* Fondo claro */
 }
 
 .postre:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más suave */
 }
 
 .postre h3 {
-    margin-top: 0;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
 }
 
 .postre p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #666;
 }
 
 .postre img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo del contenedor */
+    height: 200px; /* Fija la altura de todas las imágenes */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
+
+.btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #565e64;
+}
+
 
 /* Estilos de Navegación */
 .nav-header {
@@ -77,7 +112,9 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #000000;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* Estilos de Dropdown */
@@ -203,7 +240,7 @@ header {
 /* Adaptación del Contenedor de Login */
 .login-container {
     background-color: rgba(255, 255, 255, 0.315);
-    max-width: 40%;
+    max-width: 50%;
     height: auto;
     margin: 1rem auto;
     padding: 25px;
@@ -283,29 +320,3 @@ form{
     display: block;
 }
 
-.input-text{
-    box-shadow: inset #e571c7 0 0 0 2px;
-        border: 0;
-        background: rgba(255, 255, 255);
-        appearance: none;
-        width: 100%;
-        position: relative;
-        border-radius: 0px;
-        padding: 0px 0px;
-        line-height: 1.4;
-        color: rgb(0, 0, 0);
-        font-size: 16px;
-        font-weight: 400;
-        height: 40px;
-        transition: all .2s ease;
-        border-radius: 10px;
-        :hover{
-            box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
-        }
-        :focus{
-            background: #fff;
-            outline: 0;
-            box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
-        }
-    
-}

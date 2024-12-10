@@ -8,10 +8,38 @@
     <link rel="stylesheet" href="css/estilo.css">
     <style>
         .catalogo {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-gap: 20px;
-        padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .postre {
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.315);
+
+        }
+        .postre img {
+            width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+            height: 200px; /* Fija una altura específica para las imágenes */
+            object-fit: cover; /* Ajusta la imagen manteniendo su proporción */
+            border-radius: 10px;
+        }
+        .btn {
+            margin: 5px 0;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #007bff;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
         }
     </style>
 </head>
@@ -58,7 +86,7 @@ if ($result->num_rows > 0) {
         echo "<img src='data:image/jpeg;base64," . base64_encode($row['Imagen']) . "' alt='Imagen del postre'>";
         echo "<form action='form-orden.php' method='POST'>";
         echo "<input type='hidden' name='idPostre' value='" . $row['idPostre'] . "'>";
-        echo "<button type='submit'class='btn btn-primary' >Comprar</button>";
+        echo "<button type='submit' class='btn btn-primary'>Comprar</button>";
         echo "</form>";
         echo "<a href='ver_postre.php?id=" . $row['idPostre'] . "'><button class='btn btn-secondary'>Ver</button></a>";
         echo "</div>";

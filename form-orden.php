@@ -41,6 +41,7 @@
     height: 40px;
     transition: all .2s ease;
     border-radius: 10px;
+    margin: 0.3rem;
 }
 
 /* Estilos de enfoque y hover para mejorar usabilidad */

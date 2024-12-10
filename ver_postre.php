@@ -6,6 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postre</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        .login-container {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .col-md-6 {
+            flex: 1;
+            max-width: 50%;
+            box-sizing: border-box;
+        }
+        .col-md-6 img {
+            width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+            height: 300px; /* Fija una altura específica para las imágenes */
+            object-fit: cover; /* Ajusta la imagen manteniendo su proporción */
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -50,20 +74,17 @@ $conn->close();
 
 <script>
     function agregarAlCarrito(idPostre, precio) {
-        // Obtener los IDs de los postres en el carrito del localStorage
         var postresEnCarrito = JSON.parse(localStorage.getItem('postresEnCarrito')) || [];
         var preciosEnCarrito = JSON.parse(localStorage.getItem('preciosEnCarrito')) || [];
 
-        // Agregar el nuevo ID de postre y su precio al carrito
         postresEnCarrito.push(idPostre);
         preciosEnCarrito.push(precio);
 
-        // Guardar los arreglos actualizados en el localStorage
         localStorage.setItem('postresEnCarrito', JSON.stringify(postresEnCarrito));
         localStorage.setItem('preciosEnCarrito', JSON.stringify(preciosEnCarrito));
-
-        // Mostrar un mensaje de éxito
+location.reload();
         alert('El postre ha sido agregado al carrito de compras.');
+        
     }
 </script>
 
